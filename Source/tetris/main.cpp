@@ -1,10 +1,10 @@
 #include <SFML/Graphics.hpp>
+#include "State\stateManager.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!");
+	stateManager sManager;
 
 	while (window.isOpen())
 	{
@@ -16,7 +16,7 @@ int main()
 		}
 
 		window.clear();
-		window.draw(shape);
+		sManager.draw(window);
 		window.display();
 	}
 
