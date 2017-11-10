@@ -1,8 +1,40 @@
 #include "stateManager.h"
 
+stateManager::stateManager()
+	: currentState(NULL)
+{
+
+}
+
+stateManager::~stateManager()
+{
+	if (currentState != NULL)
+	{
+		delete currentState;
+	}
+}
+
 void stateManager::draw(sf::RenderWindow &window) 
 {
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-	window.draw(shape);
+	if (currentState != NULL)
+	{
+		currentState->draw(window);
+	}
+}
+
+void stateManager::update()
+{
+	if (currentState != NULL)
+	{
+		currentState->update();
+	}
+}
+
+void stateManager::setState(istate *newState)
+{
+	if (currentState != NULL)
+	{
+		delete currentState;
+	}
+	currentState = newState;
 }

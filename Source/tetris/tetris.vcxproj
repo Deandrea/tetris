@@ -154,10 +154,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="State\mainMenuState.cpp" />
     <ClCompile Include="State\stateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State\istate.h" />
+    <ClInclude Include="State\mainMenuState.h" />
     <ClInclude Include="State\stateManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
