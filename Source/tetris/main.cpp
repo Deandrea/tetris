@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "State\stateManager.h"
 #include "State\mainMenuState.h"
+#include "State\gameState.h"
 
 int main()
 {
