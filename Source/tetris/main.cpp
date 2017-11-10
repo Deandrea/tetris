@@ -1,13 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include "State\stateManager.h"
 #include "State\mainMenuState.h"
-#include "State\gameState.h"
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!");
 	stateManager sManager;
-	sManager.setState(new mainMenuState);
+	sManager.requestChangeState(new mainMenuState(sManager));
+	sManager.changeState();
 
 	while (window.isOpen())
 	{
@@ -18,9 +18,11 @@ int main()
 				window.close();
 		}
 
+		sManager.update();
 		window.clear();
 		sManager.draw(window);
 		window.display();
+		sManager.changeState();
 	}
 
 	return 0;

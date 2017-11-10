@@ -12,10 +12,13 @@ public:
 	~stateManager();
 	void draw(sf::RenderWindow &window);
 	void update();
-	void setState(istate *newState);
+	void requestChangeState(istate *newState);
+	//do not call this from a state, plz
+	void changeState();
 	
 private :
 	istate *currentState;
+	istate *requestedState;
 };
 
 #endif //statemanager

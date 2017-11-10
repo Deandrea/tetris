@@ -1,7 +1,8 @@
 #include "gameState.h"
 
-gameState::gameState()
-	: shape(100.0f)
+gameState::gameState(stateManager &manager)
+	: istate(manager) 
+	, shape(100.0f)
 {
 	shape.setFillColor(sf::Color::Blue);
 }

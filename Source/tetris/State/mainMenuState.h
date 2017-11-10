@@ -8,7 +8,7 @@ class mainMenuState : public istate
 
 
 public:
-	mainMenuState();
+	mainMenuState(stateManager &manager);
 	~mainMenuState();
 	virtual void draw(sf::RenderWindow &window);
 	virtual void update();

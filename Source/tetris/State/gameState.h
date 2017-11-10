@@ -8,7 +8,7 @@ class gameState : public istate
 
 
 public:
-	gameState();
+	gameState(stateManager &manager);
 	~gameState();
 	virtual void draw(sf::RenderWindow &window);
 	virtual void update();

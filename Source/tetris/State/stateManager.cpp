@@ -2,6 +2,7 @@
 
 stateManager::stateManager()
 	: currentState(NULL)
+	, requestedState (NULL)
 {
 
 }
@@ -30,11 +31,22 @@ void stateManager::update()
 	}
 }
 
-void stateManager::setState(istate *newState)
+void stateManager::requestChangeState(istate *newState)
 {
+	requestedState = newState;
+}
+
+void stateManager::changeState()
+{
+	if (requestedState == NULL) 
+		return;
+	
 	if (currentState != NULL)
 	{
 		delete currentState;
 	}
-	currentState = newState;
+
+	currentState = requestedState;
+
+	requestedState = NULL;
 }
